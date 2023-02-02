@@ -18,6 +18,8 @@ vet_repository.save(vet_1)
 
 pet_1 = Pet(owner_1, vet_1, 'Steve', 6, 'Goat', 'Low Focus', 'Prescribed Cocaine')
 pet_repository.save(pet_1)
+pet_2 = Pet(owner_1, vet_1, 'John', 3, 'Donkey', '3 legs', 'Prescribed extra leg')
+pet_repository.save(pet_2)
 pet_repository.select_all()
 
 pdb.set_trace()

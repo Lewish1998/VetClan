@@ -20,9 +20,9 @@ CREATE TABLE owners (
 
 CREATE TABLE pets (
     id SERIAL PRIMARY KEY,
-    pet_name VARCHAR(255),
+    name VARCHAR(255),
     age INT,
-    pet_type VARCHAR(255),
+    type VARCHAR(255),
     issues VARCHAR(255),
     notes VARCHAR(255),
     vet_id INT REFERENCES vets(id) ON DELETE CASCADE,

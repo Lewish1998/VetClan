@@ -23,10 +23,12 @@
     justify-items: center;
     padding-top: 100px;
     min-height: 600px;
+    background-image: url('images/gray-puppy-vet.png');
+
 }
 
 #bg-image {
-    background-image: url('images/gray-puppy-vet.png');
+    /* background-image: url('images/gray-puppy-vet.png'); */
 }
 
 #vet-title {

@@ -22,14 +22,33 @@ def select_all():
         pets.append(pet)
     return pets
 
+
+
+# unable to access owne and vet based on the pet id.
 def select(id):
     pet = None
     sql = 'SELECT * FROM pets WHERE id = %s'
     values = [id]
     results = run_sql(sql, values)
     if results:
-        owner = owner_repository.select(result[id])
-        vet = vet_repository.select(result[id])
+        pdb.set_trace()
+        owner = owner_repository.select(results[owner]) # To Fix
+        vet = vet_repository.select(result[id]) # To Fix
         result = results[0]
         pet = Pet(owner, vet, result['name'], result['age'], result['type'], result['issues'], result['notes'], result['id'])
     return pet
+
+
+def delete_all():
+    sql = 'DELETE FROM pets'
+    run_sql(sql)
+
+def delete(id):
+    sql = 'DELETE FROM pets WHERE id = %s'
+    values = [id]
+    run_sql(sql, values)
+
+def owners(pet):
+    owners = []
+    # sql = 'SELECT owners.* FROM owners INNER JOIN pets ON pets.owner_id = owners.id WHERE pet_id = %s' # Not working. Need to understand the connection
+    pass

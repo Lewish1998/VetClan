@@ -26,3 +26,14 @@ def select(id):
         result = results[0]
         owner = Owner(result['first_name'], result['last_name'], result['address'], result['contact'], result['id'])
     return owner
+
+
+def delete_all():
+    sql = 'DELETE FROM owners'
+    run_sql(sql)
+
+def delete(id):
+    sql = 'DELETE FROM owners WHERE id = %s'
+    values = [id]
+    run_sql(sql, values)
+

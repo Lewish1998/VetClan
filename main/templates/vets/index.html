@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- Loop through vets and have each vet as a hyperlink linkng to vets/show, showing the indivudual vet -->
+
+
 <h1>Vets</h1>
+
+{% for vet in vets %}
+<div class = 'view-vet'>
+    <ul>
+        <li><a href='/vets/{{vet.id}}'><b>Vet ID:</b> {{ vet.id }} <b>Vet Name:</b> {{vet.first_name}} {{ vet.last_name }}</h1></a></li>
+    </ul>
+</div>
+{% endfor %}
 
 {% endblock %}

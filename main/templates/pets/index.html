@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Pets</h1>
+{% for pet in pets %}
+<div class = 'view-pets'>
+    <h3>Pet: <a href='/pets/{{ pet.id }}'>{{ pet.name }}</a></h3>
+    <ul>
+        <li><b>ID: </b>{{ pet.id }}
+            <b>Owner: </b>{{ pet.owner.first_name }} {{ pet.owner.last_name }}
+            <b>Vet: </b>{{ pet.vet.first_name }} {{ pet.vet.last_name }}
+        </li>
+    </ul>
+</div>
+{% endfor %}
+
+{% endblock %}

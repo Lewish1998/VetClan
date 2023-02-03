@@ -17,4 +17,12 @@
 <h1>Notes</h1>
 {{ pet.notes }}
 
+<form action='/pets/{{pet.id}}/delete' method='POST'>
+    <button class='delete-button'>Delete</button>
+</form>
+
+<form action='/pets/{{pet.id}}/edit' method='POST'>
+    <button class='edit-button'>Edit</button>
+</form>
+
 {% endblock %}

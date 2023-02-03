@@ -10,4 +10,8 @@
 <h1>Pet(s)</h1>
 <p>### Pets to go here ###</p>
 
+<form action='/owners/{{owner.id}}/delete' method='POST'>
+    <button class='delete-button'>Delete</button>
+</form>
+
 {% endblock %}

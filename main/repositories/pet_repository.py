@@ -48,7 +48,3 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-def owners(pet):
-    owners = []
-    # sql = 'SELECT owners.* FROM owners INNER JOIN pets ON pets.owner_id = owners.id WHERE pet_id = %s' # Not working. Need to understand the connection
-    pass

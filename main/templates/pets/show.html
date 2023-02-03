@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<section class='border'>
 
 <h1>{{ pet.name }}</h1>
 <h1>ID</h1>
@@ -24,5 +25,5 @@
 <form action='/pets/{{pet.id}}/edit' method='GET'>
     <button class='edit-button'>Edit</button>
 </form>
-
+</section>
 {% endblock %}

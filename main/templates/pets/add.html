@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
+<section class='border'>
 
 <h1>Add Pet</h1>
 
 <form action='/pets' method='post'>
     <div>
-        <label for='name'>Name</label>
+        <label for='name'><b>Name</b></label>
         <input type='text' name='name' placeholder='Pet Name' required autofocus>
     </div>
     <div>
-        <label for='age'>Age</label>
+        <label for='age'><b>Age</b></label>
         <input type='number' name='age' placeholder='Pet Age' required>
     </div>
     <div>
-        <label for='type'>Type</label>
+        <label for='type'><b>Type</b></label>
         <input type='text' name='type' placeholder='Pet Type' required>
     </div>
     <div>
-        <label for='issues'>Issues</label>
+        <label for='issues'><b>Issues</b></label>
         <input type='text' name='issues' placeholder='Pet Issues' required>
     </div>
     <div>
-        <label for='notes'>Notes</label>
+        <label for='notes'><b>Notes</b></label>
         <input type='text' name='notes' placeholder='Pet Notes' required>
     </div>
     <div>
-        <label for='owner'>Owner</label>
+        <label for='owner'><b>Owner</b></label>
         <select name='owner_id'>
             {% for owner in owners %} 
                 <option value='{{owner.id}}'>{{ owner.first_name}} {{ owner.last_name }}</option>
@@ -35,5 +36,5 @@
 
     <button type='submit'>Add Pet</button>
 </form>
-
+</section>
 {% endblock %}

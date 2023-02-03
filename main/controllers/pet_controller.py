@@ -37,7 +37,13 @@ def create_pet():
     pet_repository.save(pet)
     return redirect('/pets')
 
-@pets_blueprint.route('/pets/<id>/delete', methods=['POST'])
+@pets_blueprint.route('/pets/<id>/delete', methods=['GET'])
 def delete_pet(id):
     pet_repository.delete(id)
     return redirect('/pets')
+
+@pets_blueprint.route('/pets/<id>/edit', methods=['POST'])
+def edit_pet(id):
+    pet = pet_repository.select(id)
+    vets = vet_repository.select_all()
+    return render_template('/pets/edit.html', pet=pet, vets=vets)

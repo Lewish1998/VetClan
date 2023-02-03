@@ -1,10 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action='/pets{{ pet.id }}' method='post'>
+<h1>Edit Pet</h1>
+
+<form action='/pets/{{ pet.id }}' method='post'>
     <div>
-        <label for
+        <label for='name'>Name</label>
+        <input type='text' value={{ pet.name }} name='name' placeholder='{{ pet.name }}' autofocus>
     </div>
+    <div>
+        <label for='age'>Age</label>
+        <input type='number' value={{ pet.age }} name='age' placeholder='{{ pet.age }}'>
+    </div>
+    <div>
+        <label for='type'>Type</label>
+        <input type='text' value={{ pet.type }} name='type' placeholder='{{ pet.type }}'>
+    </div>
+    <div>
+        <label for='issues'>Issues</label>
+        <input type='text' value={{ pet.issues }} name='issues' placeholder='{{ pet.issues }}'>
+    </div>
+    <div>
+        <label for='notes'>Notes</label>
+        <input type='text' value={{ pet.notes }} name='notes' placeholder='{{ pet.notes }}'>
+    </div>
+    <div>
+        <label for='vet'>Vet</label>
+        <select name='vet_id'>
+            {% for vet in vets %}
+                <option value='{{vet.id}}'>{{ vet.first_name }} {{ vet.last_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
 </form>
+
+<!-- Decided to not include the ability to change owner as it is too unlikely that the owner would change to one 
+of the other owners using the vets. -->
+
 
 {% endblock %}

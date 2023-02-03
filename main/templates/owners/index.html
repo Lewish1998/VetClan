@@ -6,10 +6,8 @@
 <div class = 'view-owners'>
     <h3>Owner: <a href='/owners/{{owner.id}}'>{{ owner.first_name }} {{ owner.last_name }}</a></h3>
     <ul>
-        <li><b>ID:</b> {{ owner.id }}
-            <b>Address:</b> {{ owner.address }}
-            <b>Contact Details</b> {{ owner.contact }}
-        </li>
+        <li><b>ID:</b> {{ owner.id }}</li>
+        <li><b>Contact Details</b> {{ owner.contact }}</li>
     </ul>
 </div>
 {% endfor %}

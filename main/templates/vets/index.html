@@ -9,7 +9,9 @@
 {% for vet in vets %}
 <div class = 'view-vets'>
     <ul>
-        <li><a href='/vets/{{vet.id}}'><b>Vet ID:</b> {{ vet.id }} <b>Vet Name:</b> {{vet.first_name}} {{ vet.last_name }}</h1></a></li>
+        <li><b>ID:</b> {{ vet.id }}</li> 
+        <li><b>Name: </b><a href='/vets/{{vet.id}}'>{{vet.first_name}} {{ vet.last_name }}</a></h1></li>
+
     </ul>
 </div>
 {% endfor %}

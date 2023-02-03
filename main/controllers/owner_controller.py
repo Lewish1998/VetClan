@@ -13,3 +13,17 @@ def owners():
 def view_owner(id):
     owner = owner_repository.select(id)
     return render_template('owners/show.html', owner=owner)
+
+@owners_blueprint.route('/owners/add', methods=['GET'])
+def add_owner():
+    return render_template('/owners/add.html')
+
+@owners_blueprint.route('/owners', methods=['POST'])
+def create_owner():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    address = request.form['address']
+    contact = request.form['contact']
+    owner = Owner(first_name, last_name, address, contact)
+    owner_repository.save(owner)
+    return redirect('/owners')

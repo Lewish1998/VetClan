@@ -31,9 +31,9 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)
     if results:
-        pdb.set_trace()
-        owner = owner_repository.select(results[owner]) # To Fix
-        vet = vet_repository.select(result[id]) # To Fix
+        result = results[0]
+        owner = owner_repository.select(result['owner_id'])
+        vet = vet_repository.select(result['vet_id'])
         result = results[0]
         pet = Pet(owner, vet, result['name'], result['age'], result['type'], result['issues'], result['notes'], result['id'])
     return pet

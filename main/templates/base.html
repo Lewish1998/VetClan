@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Vets</title>
 </head>
 <body>
-    <nav>
-        <ul>
+    <nav class='base-nav'>
+        <ul class='nav-list'>
             <li><a href="/">Home</a></li>
             <li><a href="/vets">View Vets</a></li>
             <li><a href="/pets">View Pets</a></li>

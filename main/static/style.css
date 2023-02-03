@@ -40,4 +40,19 @@
 .border {
     border: solid black 2px;
     border-radius: 10px;
+    padding-left: 50px;
 }
+
+.nav-list a:link {
+    color: darkolivegreen;    
+}
+
+.nav-list a:visited {
+    color: rgb(105, 53, 152);
+}
+
+.nav-list a:hover {
+    color: darkgoldenrod;
+    transition: color 2s fade;
+}
+

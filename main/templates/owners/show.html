@@ -9,8 +9,11 @@
 <h1>Contact</h1>
 <p>{{ owner.contact }}</p>
 <h1>Pet(s)</h1>
-<p>### Pets to go here ###</p>
-
+{% for pet in pets %}
+    {% if pet.owner.id == owner.id %}
+        <p>{{ pet.name }} - {{pet.type}}</p>
+    {% endif %}
+{% endfor %}
 <form action='/owners/{{owner.id}}/delete' method='POST'>
     <button class='delete-button'>Delete</button>
 </form>

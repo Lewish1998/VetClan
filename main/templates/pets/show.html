@@ -3,22 +3,16 @@
 <section class='border'>
 
 <h1>{{ pet.name }}</h1>
-<h1>ID</h1>
-{{ pet.id }}
-<h1>Owner</h1>
-{{ pet.owner.first_name }} {{pet.owner.last_name}}
-<h1>Vet</h1>
-{{ pet.vet.first_name }} {{pet.vet.last_name}}
-<h1>Age</h1>
-{{ pet.age }}
-<h1>Type</h1>
-{{ pet.type }}
-<h1>Issues</h1>
-{{ pet.issues }}
-<h1>Notes</h1>
-{{ pet.notes }}
-
-<form action='/pets/{{pet.id}}/delete' method='POST'>
+<ul>
+    <li><b>ID: </b>{{ pet.id }}</li>
+    <li><b>Owner: </b>{{ pet.owner.first_name }} {{pet.owner.last_name}}</li>
+    <li><b>Vet: </b>{{ pet.vet.first_name }} {{pet.vet.last_name}}</li>
+    <li><b>Age: </b>{{ pet.age }}</li>
+    <li><b>Type: </b>{{ pet.type }}</li>
+    <li><b>Issues: </b>{{ pet.issues }}</li>
+    <li><b>Notes: </b>{{ pet.notes }}</li>
+</ul>
+<form action='/pets/{{pet.id}}/delete' method='GET'>
     <button class='delete-button'>Delete</button>
 </form>
 

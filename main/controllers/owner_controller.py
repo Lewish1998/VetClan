@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, Blueprint
 from models.owner import Owner
 import repositories.owner_repository as owner_repository
+import repositories.pet_repository as pet_repository
 
 owners_blueprint = Blueprint('owners', __name__)
 
@@ -11,8 +12,9 @@ def owners():
 
 @owners_blueprint.route('/owners/<id>')
 def view_owner(id):
+    pets = pet_repository.select_all()
     owner = owner_repository.select(id)
-    return render_template('owners/show.html', owner=owner)
+    return render_template('owners/show.html', owner=owner, pets=pets)
 
 @owners_blueprint.route('/owners/add', methods=['GET'])
 def add_owner():

@@ -1,3 +1,4 @@
+import pdb
 from flask import Flask, render_template, redirect, request, Blueprint
 from models.pet import Pet
 import repositories.pet_repository as pet_repository
@@ -42,7 +43,7 @@ def delete_pet(id):
     pet_repository.delete(id)
     return redirect('/pets')
 
-@pets_blueprint.route('/pets/<id>/edit', methods=['POST'])
+@pets_blueprint.route('/pets/<id>/edit', methods=['GET'])
 def edit_pet(id):
     pet = pet_repository.select(id)
     vets = vet_repository.select_all()
@@ -55,8 +56,9 @@ def update_pet(id):
     type = request.form['type']
     issues = request.form['issues']
     notes = request.form['notes']
-    owner = pet_repository.select(id.owner)
-    vet = vet_repository.select(request.form['vet_id'])
+    owner = pet_repository.select(id)
+    vet_id = request.form['vet_id']
+    vet = vet_repository.select(vet_id)
     pet = Pet(owner, vet, name, age, type, issues, notes, id)
     pet_repository.update(pet)
     return redirect('/pets')

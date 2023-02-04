@@ -1,10 +1,19 @@
+:root {
+    --babyblue:#C3E0E5;
+    --darkblue:#274472;
+    --bluegrey:#5885AF;
+    --midnightblue:#41729F;
+
+}
+
+
 * {
     font-family: sans-serif;
     margin: 10px;
 }
 
 .nav-list {
-    border: solid black 2px;
+    border: solid black 2px ;
     display: flex;
     justify-content: space-evenly;
     border-radius: 10px;
@@ -43,16 +52,17 @@
     padding-left: 50px;
 }
 
-.nav-list a:link {
-    color: darkolivegreen;    
+.nav-list a:link, a:link {
+    color: var(--midnightblue);    
 }
 
-.nav-list a:visited {
-    color: rgb(105, 53, 152);
+.nav-list a:visited, a:visited {
+    color: var(--darkblue);
 }
 
-.nav-list a:hover {
-    color: darkgoldenrod;
-    transition: color 2s fade;
+
+
+.nav-list a:hover, a:hover {
+    color: var(--midnightblue);
 }
 

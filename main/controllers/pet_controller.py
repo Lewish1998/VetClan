@@ -51,20 +51,21 @@ def edit_pet(id):
     return render_template('/pets/edit.html', pet=pet, vets=vets, owners=owners)
     # edit_pet working - redirecting to the correct web page
 
-@pets_blueprint.route('/pets/<id>', methods=['POST'])
+@pets_blueprint.route('/pets', methods=['POST'])
 def update_pet(id):
     vets = vet_repository.select_all()
     owners = owner_repository.select_all()
+
     name = request.form['name']
     age = request.form['age']
     type = request.form['type']
     issues = request.form['issues']
     notes = request.form['notes']
-
     owner_id = request.form['owner_id']
     vet_id = request.form['vet_id']
+
     vet = vet_repository.select(vet_id)
-    owner = owner_repository.select(id)
+    owner = owner_repository.select(owner_id)
 
     pet = Pet(owner, vet, name, age, type, issues, notes, id)
     pet_repository.update(pet)

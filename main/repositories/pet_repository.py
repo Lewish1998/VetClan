@@ -50,6 +50,7 @@ def delete(id):
 
 
 def update(pet):
-    sql = 'UPDATE pets SET (name, age, type, issues, notes, vet, owner) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s'
-    values = [pet.name, pet.age, pet.type, pet.issues, pet.notes, pet.vet, pet.owner, pet.id]
+    sql = 'UPDATE pets SET (name, age, type, issues, notes, vet_id, owner_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s'
+    values = [pet.name, pet.age, pet.type, pet.issues, pet.notes, pet.vet.id, pet.owner.id, pet.id] 
     run_sql(sql, values)
+    # edit function working. Not working when editing within the html page 

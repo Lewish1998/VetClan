@@ -4,7 +4,7 @@
 
 <h1>Edit Pet</h1>
 
-<form action='/pets/edit' method='get'>
+<form action='/pets/{{ pet.id }}/update' method='post'>
     <div>
         <label for='name'>Name</label>
         <input type='text' value={{ pet.name }} name='name' placeholder='{{ pet.name }}' autofocus>
@@ -35,13 +35,14 @@
     </div>
     <!-- owner input in here but will not show in the webpage. Added in here so easy to change. -->
         <label for='owner_id'>Owner</label>
-        <select name='owner-id'>
+        <select name='owner_id'>
             {% for owner in owners %}
-                <option value='{{owner.id}}'>{{ owner.first_name }} {{ owner.last_name }}</option>
+                <option value='{{owner.id}}'
+                    {% if owner.first_name == pet.owner.first_name %} selected='selected' {% endif%}> {{ owner.first_name }} {{ owner.last_name }}</option>
             {% endfor %}
         </select>
     </div>
-    <button type='submit'> Update Pet</button>
+    <button type='submit'>Update Pet</button>
 </form>
 </section>
 <!-- Decided to not include the ability to change owner as it is too unlikely that the owner would change to one 

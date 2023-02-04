@@ -29,7 +29,11 @@
         <label for='owner'><b>Owner</b></label>
         <select name='owner_id'>
             {% for owner in owners %} 
+            {% if owner.active %}
                 <option value='{{owner.id}}'>{{ owner.first_name}} {{ owner.last_name }}</option>
+            {% elif owner.active == False %}
+                <p>Owner {{ owner.first_name }} {{ owner.last_name }} inactive</p>
+            {% endif %}
             {% endfor %}
         </select>
     </div>

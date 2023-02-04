@@ -4,6 +4,18 @@
 <section class='border'>
 
 <h1>{{ owner.first_name }} {{owner.last_name}}</h1>
+
+
+
+<h1>Owner Active: <i class="fa-solid fa-check"></i<
+    {% if owner.active %}
+        <p>True</p>
+    {% elif owner.active == False %}
+       <p>False</p>
+    {% endif %}
+
+
+
 <h1>Address</h1>
 <p>{{ owner.address }}</p>
 <h1>Contact</h1>

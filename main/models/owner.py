@@ -4,4 +4,5 @@ class Owner:
         self.last_name = last_name
         self.address = address
         self.contact = contact
+        self.active = True
         self.id = id

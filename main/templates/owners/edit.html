@@ -15,7 +15,7 @@
     </div>
     <div>
         <label for='address'>Address</label>
-        <input type='address' value={{ owner.address}} name='address' placeholder='{{ owner.address }}'>
+        <input type='text' value={{ owner.address}} name='address' placeholder='{{ owner.address }}'>
     </div>
     <div>
         <label for='contact'>Contact</label>
@@ -23,14 +23,19 @@
     </div>
 
     <!-- Owner Active Button to go here -->
+    <!--<input type='checkbox' name='active' {% if owner.active %}checked{% endif %}>-->
+    <!-- Checkbox not working-->
 
 
-<!-- not working
-    <div>
-        <label for='active'>Active</label>
-        <input type='checkbox' value={{ owner.active }} name='active' placeholder='{{ owner.active }}'>
-    </div>
--->
+    <label for='active'>User Active</label>
+    <select id="active" name="active">
+        <option value="true"
+        {% if owner.active %} selected='selected' {% endif %}>True</option>
+        <option value="false"
+        {% if owner.active == False %} selected='selected' {% endif %}>False</option>
+    </select>
+
+
     <button type='submit'>Update Owner</button>
 </form>
 </section>

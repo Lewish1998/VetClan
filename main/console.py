@@ -15,14 +15,11 @@ import repositories.vet_repository as vet_repository
 
 
 vet_1 = Vet('Jeff', 'Bezos', 'Awful vet. Only here to take peoples money.', 'Snake')
-# vet_repository.save(vet_1)
-# vet_2 = Vet('Jesus', 'Christ', 'Literally bring animals back from the dead.', 'Dove')
-# vet_repository.save(vet_2)
-# # vet_repository.select_all()
-# # vet_repository.delete_all()
-# # vet_repository.select_all()
-
-
+vet_repository.save(vet_1)
+vet_2 = Vet('Jesus', 'Christ', 'Literally bring animals back from the dead.', 'Dove')
+vet_repository.save(vet_2)
+vet_3 = Vet('Tony', 'Hawk', "Literally a skateboarder. Not entirely sure why he's here but good with animals", 'Goat')
+vet_repository.save(vet_3)
 # pet_1 = Pet(owner_1, vet_1, 'Test Edit', 600, 'test', 'Low Focus', 'Prescribed Cocaine')
 # pet_repository.save(pet_1)
 # pet_2 = Pet(owner_1, vet_2, 'John', 3, 'Donkey', '3 legs', 'Prescribed extra leg')

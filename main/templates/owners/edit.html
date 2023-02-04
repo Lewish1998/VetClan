@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class='border'>
+
+<h1>Edit Owner</h1>
+
+<form action='/owners/{{ owner.id }}/update' method='post'>
+    <div>
+        <label for='first_name'>First Name</label>
+        <input type='text' value={{ owner.first_name }} name='first_name' placeholder='{{ owner.first_name }}' autofocus>
+    </div>
+    <div>
+        <label for='last_name'>Last Name</label>
+        <input type='text' value={{ owner.last_name }} name='last_name' placeholder='{{ owner.last_name }}'>
+    </div>
+    <div>
+        <label for='address'>Address</label>
+        <input type='address' value={{ owner.address}} name='address' placeholder='{{ owner.address }}'>
+    </div>
+    <div>
+        <label for='contact'>Contact</label>
+        <input type='text' value={{ owner.contact }} name='contact' placeholder='{{ owner.contact }}'>
+    </div>
+
+    <!-- Owner Active Button to go here -->
+
+
+<!-- not working
+    <div>
+        <label for='active'>Active</label>
+        <input type='checkbox' value={{ owner.active }} name='active' placeholder='{{ owner.active }}'>
+    </div>
+-->
+    <button type='submit'>Update Owner</button>
+</form>
+</section>
+
+{% endblock %}

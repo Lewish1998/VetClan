@@ -1,3 +1,4 @@
+import pdb
 from flask import Flask, render_template, redirect, request, Blueprint
 from models.owner import Owner
 import repositories.owner_repository as owner_repository
@@ -33,4 +34,24 @@ def create_owner():
 @owners_blueprint.route('/owners/<id>/delete', methods=['POST'])
 def delete_owner(id):
     owner_repository.delete(id)
+    return redirect('/owners')
+
+@owners_blueprint.route('/owners/<id>/edit', methods=['GET'])
+def edit_owner(id):
+    owner = owner_repository.select(id)
+    return render_template('/owners/edit.html', owner=owner)
+
+    # edit_pet working - redirecting to the correct web page
+
+
+@owners_blueprint.route('/owners/<id>/update', methods=['POST'])
+def update_owner(id):
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    address = request.form['address']
+    contact = request.form['contact']
+    # active = request.form['active']
+    owner = Owner(first_name, last_name, address, contact, id)
+    # pdb.set_trace()
+    owner_repository.update(owner)
     return redirect('/owners')

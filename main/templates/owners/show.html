@@ -7,7 +7,7 @@
 
 
 
-<h1>Owner Active: <i class="fa-solid fa-check"></i<
+<h1>Owner Active: <i class="fa-solid fa-check"></i>
     {% if owner.active %}
         <p>True</p>
     {% elif owner.active == False %}
@@ -28,6 +28,9 @@
 {% endfor %}
 <form action='/owners/{{owner.id}}/delete' method='POST'>
     <button class='delete-button'>Delete</button>
+</form>
+<form action='/owners/{{owner.id}}/edit' method='GET'>
+    <button class='edit-button'>Edit</button>
 </form>
 </section>
 {% endblock %}

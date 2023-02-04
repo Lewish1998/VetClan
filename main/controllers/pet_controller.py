@@ -46,22 +46,26 @@ def delete_pet(id):
 @pets_blueprint.route('/pets/<id>/edit', methods=['GET'])
 def edit_pet(id):
     pet = pet_repository.select(id)
-    vets = vet_repository.select_all() 
-    return render_template('/pets/edit.html', pet=pet, vets=vets)
+    vets = vet_repository.select_all()
+    owners = owner_repository.select_all()
+    return render_template('/pets/edit.html', pet=pet, vets=vets, owners=owners)
     # edit_pet working - redirecting to the correct web page
 
-@pets_blueprint.route('/pets/edit', methods=['POST'])
+@pets_blueprint.route('/pets/<id>', methods=['POST'])
 def update_pet(id):
-    pdb.set_trace()
+    vets = vet_repository.select_all()
+    owners = owner_repository.select_all()
     name = request.form['name']
     age = request.form['age']
     type = request.form['type']
     issues = request.form['issues']
     notes = request.form['notes']
-    owner = pet_repository.select(id)
+
+    owner_id = request.form['owner_id']
     vet_id = request.form['vet_id']
     vet = vet_repository.select(vet_id)
+    owner = owner_repository.select(id)
+
     pet = Pet(owner, vet, name, age, type, issues, notes, id)
     pet_repository.update(pet)
-    pdb.set_trace() # not getting to this point 
-    return redirect('/pets')
+    return redirect('/pets', owners=owners, vets=vets)

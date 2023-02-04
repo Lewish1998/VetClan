@@ -15,7 +15,8 @@ CREATE TABLE owners (
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     address VARCHAR(255),
-    contact VARCHAR(255)
+    contact VARCHAR(255),
+    active BOOLEAN
 );
 
 CREATE TABLE pets (

@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.owner import Owner
 
 def save(owner):
-    sql = 'INSERT INTO owners (first_name, last_name, address, contact) VALUES (%s, %s, %s, %s) RETURNING id'
-    values = [owner.first_name, owner.last_name, owner.address, owner.contact]
+    sql = 'INSERT INTO owners (first_name, last_name, address, contact, active) VALUES (%s, %s, %s, %s, %s) RETURNING id'
+    values = [owner.first_name, owner.last_name, owner.address, owner.contact, owner.active]
     results = run_sql(sql, values)
     owner.id = results[0]['id']
     return owner
@@ -13,7 +13,7 @@ def select_all():
     sql = 'SELECT * FROM owners'
     results = run_sql(sql)
     for row in results:
-        owner = Owner(row['first_name'], row['last_name'], row['address'], row['contact'], row['id'])
+        owner = Owner(row['first_name'], row['last_name'], row['address'], row['contact'], row['active'], row['id'])
         owners.append(owner)
     return owners
 
@@ -24,7 +24,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        owner = Owner(result['first_name'], result['last_name'], result['address'], result['contact'], result['id'])
+        owner = Owner(result['first_name'], result['last_name'], result['address'], result['contact'], result['active'], result['id'])
     return owner
 
 
@@ -39,6 +39,6 @@ def delete(id):
 
 
 def update(owner):
-    sql = 'UPDATE owners SET (first_name, last_name, address, contact) = (%s, %s, %s, %s) WHERE id = %s'
-    values = [owner.first_name, owner.last_name, owner.address, owner.contact, owner.id] 
+    sql = 'UPDATE owners SET (first_name, last_name, address, contact, active) = (%s, %s, %s, %s, %s) WHERE id = %s'
+    values = [owner.first_name, owner.last_name, owner.address, owner.contact, owner.active, owner.id] 
     run_sql(sql, values)

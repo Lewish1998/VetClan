@@ -47,11 +47,7 @@ def update_owner(id):
     last_name = request.form['last_name']
     address = request.form['address']
     contact = request.form['contact']
-    owner = Owner(first_name, last_name, address, contact, active, id)
     active = request.form['active']
-    if active:
-        owner.active == True
-    else:
-        owner.active == False
+    owner = Owner(first_name, last_name, address, contact, active, id)
     owner_repository.update(owner)
     return redirect('/owners')

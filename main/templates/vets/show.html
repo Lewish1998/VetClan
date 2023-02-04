@@ -7,5 +7,13 @@
 <p>{{ vet.description }}</p>
 <h1>{{ vet.first_name }}'s Favourite Animal</h1>
 <p>{{ vet.fav_animal}}</p>
+<h1>Current Patients</h1>
+<p>
+{% for pet in pets %}
+    {% if pet.vet.id == vet.id%}
+        {{ pet.name }} - {{ pet.type }}
+    {% endif %}
+{% endfor %}
+</p>
 </section>
 {% endblock %}

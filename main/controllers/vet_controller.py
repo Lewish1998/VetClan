@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, Blueprint
 from models.vet import Vet
 import repositories.vet_repository as vet_repository
+import repositories.pet_repository as pet_repository
 
 vets_blueprint = Blueprint('vets', __name__)
 
@@ -11,5 +12,6 @@ def vets():
 
 @vets_blueprint.route('/vets/<id>')
 def view_vet(id):
+    pets = pet_repository.select_all()
     vet = vet_repository.select(id)
-    return render_template('/vets/show.html', vet=vet)
+    return render_template('/vets/show.html', vet=vet, pets=pets)

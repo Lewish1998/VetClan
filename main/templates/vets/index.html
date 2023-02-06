@@ -5,12 +5,12 @@
 <section class='border'>
 
 
-<h1>Vets</h1>
+<h1 class='headings'>Vets</h1>
 
 {% for vet in vets %}
 <div class = 'view-vets'>
     <ul>
-        <li><b>Name: </b><a href='/vets/{{vet.id}}'>{{vet.first_name}} {{ vet.last_name }}</a><b>ID:</b> {{ vet.id }}</h1></li>
+        <li><b>Name: </b><a href='/vets/{{vet.id}}'>{{vet.first_name}} {{ vet.last_name }}</a><br><b>ID:</b> {{ vet.id }}</h1></li>
 
     </ul>
 </div>

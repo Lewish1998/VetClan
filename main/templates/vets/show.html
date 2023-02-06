@@ -2,18 +2,16 @@
 {% block content %}
 <section class='border'>
 
-<h1>{{ vet.first_name }} {{vet.last_name}}</h1>
+<h1 class='headings'>{{ vet.first_name }} {{vet.last_name}}</h1>
 <h1>About {{vet.first_name }}</h1>
 <p>{{ vet.description }}</p>
 <h1>{{ vet.first_name }}'s Favourite Animal</h1>
 <p>{{ vet.fav_animal}}</p>
 <h1>Current Patients</h1>
-<p>
 {% for pet in pets %}
     {% if pet.vet.id == vet.id%}
-        {{ pet.name }} - {{ pet.type }}
+        <p>{{ pet.name }} - {{ pet.type }}</p>
     {% endif %}
 {% endfor %}
-</p>
 </section>
 {% endblock %}

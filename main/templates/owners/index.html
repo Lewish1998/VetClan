@@ -3,7 +3,7 @@
 
 <section class='border'>
 
-<h1>Owners</h1>
+<h1 class='headings'>Owners</h1>
 
 {% for owner in owners %}
 <div class = 'view-owners'>
@@ -12,6 +12,7 @@
         <li><b>ID:</b> {{ owner.id }}</li>
         <li><b>Contact Details</b> {{ owner.contact }}</li>
     </ul>
+    <br>
 </div>
 
 {% endfor %}

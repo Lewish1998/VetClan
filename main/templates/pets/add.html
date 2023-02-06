@@ -2,32 +2,32 @@
 {% block content %}
 <section class='border'>
 
-<h1>Add Pet</h1>
+<h1 class='headings'>Add Pet</h1>
 
 <form action='/pets' method='post'>
-    <div>
+    <div id='pet-name'>
         <label for='name'><b>Name</b></label>
         <input type='text' name='name' placeholder='Pet Name' required autofocus>
     </div>
-    <div>
+    <div id='pet-age'>
         <label for='age'><b>Age</b></label>
         <input type='number' name='age' placeholder='Pet Age' required>
     </div>
-    <div>
+    <div id='pet-type'>
         <label for='type'><b>Type</b></label>
         <input type='text' name='type' placeholder='Pet Type' required>
     </div>
-    <div>
+    <div id='pet-issues'>
         <label for='issues'><b>Issues</b></label>
         <input type='text' name='issues' placeholder='Pet Issues' required>
     </div>
-    <div>
+    <div id='pet-issues'>
         <label for='notes'><b>Notes</b></label>
         <input type='text' name='notes' placeholder='Pet Notes' required>
     </div>
     <div>
         <label for='owner'><b>Owner</b></label>
-        <select name='owner_id'>
+        <select name='owner_id' required>
             {% for owner in owners %} 
             {% if owner.active %}
                 <option value='{{owner.id}}'>{{ owner.first_name}} {{ owner.last_name }}</option>
@@ -36,6 +36,15 @@
             {% endif %}
             {% endfor %}
         </select>
+
+            <div id='check-in'>
+                <label for='check-in'>Check In</label>
+                <input type='date'></input>
+            </div>
+            <div id='check-out'>
+                <label for='check-out'>Check Out</label>
+                <input type='date'></input>
+            </div>
     </div>
 
     <button type='submit'>Add Pet</button>

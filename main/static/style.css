@@ -1,68 +1,94 @@
 :root {
-    --babyblue:#C3E0E5;
-    --darkblue:#274472;
-    --bluegrey:#5885AF;
-    --midnightblue:#41729F;
-
+  --darkestblue: #0a2647;
+  --midnight: #144272;
+  --sea: #205295;
+  --sky: #2c74b3;
+  --lightblue: #64a8e4;
+  --orange: #ff8b13;
 }
 
+.base-nav {
+  border: solid var(--darkestblue);
+  border-radius: 20px;
+  box-shadow: 15px 15px rgba(10, 38, 71, 0.7);
+  background-image: linear-gradient(to right, var(--sky), var(--darkestblue));
+}
 
-* {
-    font-family: sans-serif;
-    margin: 10px;
+.nav-list a:visited {
+    color: var(--orange);
 }
 
 .nav-list {
-    border: solid black 2px ;
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 10px;
-    padding: 25px;
-    font-size: 25px;
-    list-style: none;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  text-decoration: underline;
 }
 
-
-#main-page {
-    border: solid black 2px;
-    border-radius:10px ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    padding-top: 100px;
-    min-height: 600px;
-    background-image: url('images/gray-puppy-vet.png');
-
+.block-section {
+  text-align: center;
+  border: solid var(--darkestblue);
+  border-radius: 20px;
+  margin-top: 70px;
+  padding: 0 0px 30px 30px;
+  box-shadow: 15px 15px rgba(10, 38, 71, 0.7);
+  background-color: #ffffff;
 }
 
-#bg-image {
-    /* background-image: url('images/gray-puppy-vet.png'); */
+body {
+    height: 1400px;
+  margin: 50px 70px 50px 70px;
+  font-family: "Roboto Slab", serif;
+  background-image: linear-gradient(#ffffff, var(--lightblue));
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #vet-title {
-    font-size: 60px;
-    padding-bottom: 50px;
+  font-size: 70px;
+  text-decoration: underline var(--orange);
 }
 
-
-.border {
-    border: solid black 2px;
-    border-radius: 10px;
-    padding-left: 50px;
+.headings {
+  font-size: 25px;
+  text-decoration: underline;
 }
 
-.nav-list a:link, a:link {
-    color: var(--midnightblue);    
+a {
+  text-decoration: none;
 }
 
-.nav-list a:visited, a:visited {
-    color: var(--darkblue);
+a:visited {
+  color: var(--midnight);
 }
 
+a:active {
+  color: var(--orange);
+}
 
+a:hover {
+  color: #2c74b3;
+  text-decoration: underline var(--orange);
+}
 
-.nav-list a:hover, a:hover {
-    color: var(--midnightblue);
+.view-owners {
+  border: solid var(--orange);
+  border-radius: 20px;
+  margin: 30px 30px 30px 0;
+}
+
+.box-test {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    margin: 10px;
+}
+
+.box-test .input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
 }
 

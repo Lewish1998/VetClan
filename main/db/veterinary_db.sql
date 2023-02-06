@@ -26,6 +26,6 @@ CREATE TABLE pets (
     type VARCHAR(255),
     issues VARCHAR(255),
     notes VARCHAR(255),
-    vet_id INT REFERENCES vets(id) ON DELETE CASCADE,
+    vet_id INT REFERENCES vets(id),
     owner_id INT REFERENCES owners(id) ON DELETE CASCADE
 );

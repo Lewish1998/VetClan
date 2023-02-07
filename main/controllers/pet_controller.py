@@ -34,6 +34,7 @@ def create_pet():
     owner = owner_repository.select(request.form['owner_id'])
     vets = vet_repository.select_all()
     vet = random.choice(vets)
+
     pet = Pet(owner, vet, name, age, type, issues, notes)
     pet_repository.save(pet)
     return redirect('/pets')

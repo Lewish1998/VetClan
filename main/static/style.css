@@ -14,10 +14,6 @@
   background-image: linear-gradient(to right, var(--sky), var(--darkestblue));
 }
 
-.nav-list a:visited {
-    color: var(--orange);
-}
-
 .nav-list {
   font-size: 25px;
   display: flex;
@@ -34,12 +30,6 @@
   text-shadow: 10px 10px rgba(0, 0, 0, 0.2);
   font-size: 35px;
 }
-
-
-
-
-
-
 
 .block-section {
   text-align: center;
@@ -66,16 +56,16 @@ body {
   text-decoration: underline var(--orange);
 }
 
-
-a {
+#a, a{
   text-decoration: none;
+  color: var(--sky);
 }
 
-a:visited {
-  color: var(--midnight);
+#a, a:visited {
+  color: var(--lightblue);
 }
 
-a:active {
+#a, a:active {
   color: var(--orange);
 }
 
@@ -108,9 +98,6 @@ a:hover {
     margin: 10px;
 }
 
-
-
-
 .owner-grid {
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
@@ -123,11 +110,10 @@ a:hover {
 }
 
 .add-buttons {
-  display: grid;
-  grid-template-columns: 10% 10% 5% ;
+  margin-top: 20px;
 }
-
-
+#add-button {
+}
 
 .titles {
   text-decoration: underline var(--orange) 3px;

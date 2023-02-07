@@ -23,7 +23,7 @@
 }
 
 #a {
-  transition: all 1s;
+  transition: all 0.7s;
 }
 
 #a:hover {
@@ -36,9 +36,9 @@
   border: solid var(--darkestblue);
   border-radius: 20px;
   margin-top: 70px;
-  padding: 0 0px 30px 30px;
+  padding: 30px;
   box-shadow: 15px 15px rgba(10, 38, 71, 0.7);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 body {
@@ -112,8 +112,8 @@ a:hover {
 .add-buttons {
   margin-top: 20px;
 }
-#add-button {
-}
+
+
 
 .titles {
   text-decoration: underline var(--orange) 3px;
@@ -123,4 +123,11 @@ a:hover {
 
 .titles:hover {
   text-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+#main-bg-image {
+  width: 50%;
+  position: relative;
+  border-radius: 50px;
 }

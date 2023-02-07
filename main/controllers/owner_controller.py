@@ -28,7 +28,10 @@ def create_owner():
     address = request.form['address']
     contact = request.form['contact']
     owner = Owner(first_name, last_name, address, contact)
+
     owner_repository.save(owner)
+    pdb.set_trace()
+
     return redirect('/owners')
 
 @owners_blueprint.route('/owners/<id>/delete', methods=['POST'])

@@ -2,31 +2,43 @@
 {% block content %}
 <section class='border'>
 
-<h1 class='headings'>Add Pet</h1>
+<h1 class='titles'>Add Pet</h1>
+
+
 
 <form action='/pets' method='post'>
-    <div id='pet-name'>
-        <label for='name'><b>Name</b></label>
-        <input type='text' name='name' placeholder='Pet Name' required autofocus>
+    <div class='add-owner-grid'>
+
+        <div id='pet-name'>
+            <label for='name'><b>Name</b></label>
+            <input type='text' name='name' placeholder='Pet Name' required autofocus>
+        </div>
+        <div id='pet-age'>
+            <label for='age'><b>Age</b></label>
+            <input type='number' name='age' placeholder='Pet Age' required>
+        </div>
+        <div id='pet-type'>
+            <label for='type'><b>Type</b></label>
+            <input type='text' name='type' placeholder='Pet Type' required>
+        </div>
+        <div id='pet-issues'>
+            <label for='issues'><b>Issues</b></label>
+            <input type='text' name='issues' placeholder='Pet Issues' required>
+        </div>
+        <div id='pet-issues'>
+            <label for='notes'><b>Notes</b></label>
+            <input type='text' name='notes' placeholder='Pet Notes' required>
+        </div>
+
     </div>
-    <div id='pet-age'>
-        <label for='age'><b>Age</b></label>
-        <input type='number' name='age' placeholder='Pet Age' required>
-    </div>
-    <div id='pet-type'>
-        <label for='type'><b>Type</b></label>
-        <input type='text' name='type' placeholder='Pet Type' required>
-    </div>
-    <div id='pet-issues'>
-        <label for='issues'><b>Issues</b></label>
-        <input type='text' name='issues' placeholder='Pet Issues' required>
-    </div>
-    <div id='pet-issues'>
-        <label for='notes'><b>Notes</b></label>
-        <input type='text' name='notes' placeholder='Pet Notes' required>
-    </div>
-    <div>
-        <label for='owner'><b>Owner</b></label>
+
+
+    <div class='add-buttons'>
+
+
+    <label for='owner'><b>Owner</b></label>
+
+
         <select name='owner_id' required>
             {% for owner in owners %} 
             {% if owner.active %}
@@ -37,6 +49,7 @@
             {% endfor %}
         </select>
 
+        <!--
             <div id='check-in'>
                 <label for='check-in'>Check In</label>
                 <input type='date'></input>
@@ -45,9 +58,12 @@
                 <label for='check-out'>Check Out</label>
                 <input type='date'></input>
             </div>
+            -->
+
+
+        <button  type='submit'>Add Pet</button>
     </div>
 
-    <button type='submit'>Add Pet</button>
 </form>
 </section>
 {% endblock %}

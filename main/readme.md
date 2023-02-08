@@ -1,3 +1,5 @@
 
 
-![Alt text](planning/Website-plan.png?raw=true "Wireframe")
+
+
+![alt text](planning/website-plan.png "wireframe")

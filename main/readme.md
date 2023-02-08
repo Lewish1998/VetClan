@@ -1,2 +1,3 @@
 
-[logo]:(planning/Website-plan.png)"Logo Title Text 2"
+
+![alt text](planning/Website-plan.png "Wireframe")

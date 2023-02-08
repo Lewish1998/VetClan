@@ -1,12 +1,12 @@
 # Project 1: Code Quality Checklist
 
 - Testing
-  - All code is working! (testing with console.rb or via Chrome is fine)
-  - Methods that don’t touch the database are unit tested (specs)
-  - Dead code is removed
+  - All code is working! (testing with console.rb or via Chrome is fine) ✓
+  - Methods that don’t touch the database are unit tested (specs) ✓
+  - Dead code is removed ✓
 
 - Naming
-  - Classes have singular names
+  - Classes have singular names 
   - DB tables have plural names
   - Variables have meaningful names
   - Methods have meaningful names.

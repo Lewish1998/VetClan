@@ -1,2 +1,2 @@
-FLASK_APP=app.py
-FLASK_DEBUG = True
+
+[logo]: planning/projects.md "Logo Title Text 2"

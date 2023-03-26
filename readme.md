@@ -4,6 +4,14 @@
 
 The aim for this project was to create a full stack crud app using Flask.
 
+Features:
+Creating users
+Adding pets and assigning them to users
+Pets are randomly allocated one of the available vets - this can be changed in the edit page
+Ability to edit and delete both users and pets
+View more information on a selected pet or user
+
+
 I planned the basic layout of the site, what my backend relationships would be and what funcionality and features I would like to have.
 
 This project was created using:
@@ -13,6 +21,7 @@ HTML
 CSS
 
 Looking back at the project I would have liked to modeled it on a pre-existing site to achieve a more professional looking product.
+I would also like to have had a treatments page where users would be able to book their pets at a specific date and time for one of the availably treatments.
 
 
 

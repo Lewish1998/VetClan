@@ -4,7 +4,13 @@
 
 The aim for this project was to create a full stack crud app using Flask.
 
+I planned the basic layout of the site, what my backend relationships would be and what funcionality and features I would like to have.
 
+This project was created using:
+Flask
+PSQL
+HTML
+CSS
 
 Looking back at the project I would have liked to modeled it on a pre-existing site to achieve a more professional looking product.
 
